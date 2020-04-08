@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyendoitiente</title>
+</head>
+<body>
+    <script>
+       function convert() {
+           let amount=document.getElementById("amount").value;
+           let fromcurrent=document.getElementById("fromcurrent").value;
+           let tocurrent=document.getElementById("tocurrent").value;
+           if(fromcurrent==="VND"&&tocurrent==="USD"){a=amount/23000;}
+                else if(fromcurrent==="USD"&&tocurrent==="VND"){a=amount*23000;}
+           else{alert("Yêu cầu chọn USD or VND")}
+           document.getElementById("a").value=a
+       }
+    </script>
+    Amount:
+        <input id="amount"type="number">
+    From Current
+        <select id="fromcurrent">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+    To Current:
+        <select id="tocurrent">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+        <input id="a">
+        <button onclick="convert()">Convert</button>
+</body>
+</html>
