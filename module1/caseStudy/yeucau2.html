@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucau2</title>
+</head>
+<body>
+<script>
+    let name = "Minh";
+    let cmnd = "325252";
+    let birthday = "15/12/1995";
+    let email = "minh@gmail.com";
+    let address = "Đà Nẵng";
+    let typeService = "Villa";
+    let typeRoom = "Vip";
+    let typeCustomer = "Diamond";
+    let discount = 10;
+    let quantityIncluded = 10;
+    let rendDays = 7;
+    let totalPay;
+    let choose = parseInt(prompt("1. Hiển thị thông tin khách hàng." + "\n" +
+        "2. Chỉnh sửa thông tin khách hàng." + "\n"
+        + "3. Hiển thị giá sau khi được giảm giá"));
+    switch (choose) {
+        case 1: {
+            alert("Name: " + name + "\n" +
+                "CMND: " + cmnd + "\n" +
+                "Birthday: " + birthday + "\n" +
+                "Email: " + email + "\n" +
+                "Address: " + address + "\n" +
+                "Type Service: " + typeService + "\n" +
+                "Type Room: " + typeRoom + "\n" +
+                "Type Customer: " + typeCustomer + "\n" +
+                "Discount: " + discount + "\n" +
+                "QuantityIncluded: " + quantityIncluded + "\n" +
+                "RendDays: " + rendDays);
+            break;
+        }
+        case 2: {
+            let chooseEdit = parseInt(prompt("1.Name: " + name + "\n" +
+                "2.CMND: " + cmnd + "\n" +
+                "3.Birthday: " + birthday + "\n" +
+                "4.Email: " + email + "\n" +
+                "5.Address: " + address + "\n" +
+                "6.Type Service: " + typeService + "\n" +
+                "7.Type Room: " + typeRoom + "\n" +
+                "8.Type Customer: " + typeCustomer + "\n" +
+                "9.Discount: " + discount + "\n" +
+                "10.QuantityIncluded: " + quantityIncluded + "\n" +
+                "11.RendDays: " + rendDays));
+            switch (chooseEdit) {
+                case 1: {
+                    name = prompt("Enter Name: ");
+                    break;
+                }case 2: {
+                    cmnd=prompt("Enter CMND: ");
+                    break;
+                }case 3: {
+                    birthday=prompt("Enter Birthday: ");break;
+                }case 4: {
+                    address=prompt("Enter Address: ");break;
+                }case 5: {
+                    address=prompt("Enter Address: ");break;
+                }case 6: {
+                    typeService=prompt("Enter Type Service: ");break;
+                }case 7: {
+                    typeRoom=prompt("Enter Type Room: ");break;
+                }case 8: {
+                    typeCustomer=prompt("Enter Type Customer: ");break;
+                }case 9: {
+                    discount=prompt("Enter Discount: ");break;
+                }case 10: {
+                    quantityIncluded=prompt("Enter QuantityIncluded: ");break;
+                }case 11: {
+                    rendDays=prompt("Enter rendDay: ");break;
+                }
+            }
+            alert("Name: " + name + "\n" +
+                "CMND: " + cmnd + "\n" +
+                "Birthday: " + birthday + "\n" +
+                "Email: " + email + "\n" +
+                "Address: " + address + "\n" +
+                "Type Service: " + typeService + "\n" +
+                "Type Room: " + typeRoom + "\n" +
+                "Type Customer: " + typeCustomer + "\n" +
+                "Discount: " + discount + "\n" +
+                "QuantityIncluded: " + quantityIncluded + "\n" +
+                "RendDays: " + rendDays);
+            break;
+        }
+        case 3: {
+            let money=0;
+            if (typeService==="Villa"){
+                money=500;
+            }else if (typeService==="House"){
+                money=300;
+            }else if (typeService==="Room"){
+                money=100;
+            }
+            let temp=0;
+            if (address==="Đà Nẵng"){
+                temp+=20;
+            }else if (address==="Huế"){
+                temp+=10;
+            }else if (address==="Quảng Nam"){
+                temp+=5;
+            }
+            if (rendDays>7){
+                temp+=30;
+            }else if (rendDays>5){
+                temp+=20;
+            }else if (rendDays>2){
+                temp+=10;
+            }if (typeCustomer==="Diamond"){
+                temp+=15;
+            }else if (typeCustomer==="Platium"){
+                temp+=10;
+            }else if (typeCustomer==="Gold"){
+                temp+=5;
+            }else if (typeCustomer==="Silver"){
+                temp+=2;
+            }else if (typeCustomer==="Member"){
+                temp+=0;
+            }
+            alert("TotalPay: "+(money*rendDays-temp));break;
+        }
+    }
+</script>
+
+</body>
+</html>
