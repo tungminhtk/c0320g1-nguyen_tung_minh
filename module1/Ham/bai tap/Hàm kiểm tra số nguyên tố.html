@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let count = 0;
+    let number = 2;
+    while (count <= 10000) {
+        if (isPrime(number)) {
+            document.writeln(number + " là số nguyên tố");
+            document.write("<br>");
+            count++;
+        }
+        number++;
+    }
+</script>
+
+</body>
+</html>
