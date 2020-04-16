@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt5</title>
+</head>
+<body>
+<script>
+    let star1 = ["Polaris", " Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let searchstar = prompt("moi ban nhap ten: ");
+    let check = true
+    for (let i = 0; i < star1.length; i++) {
+        if (searchstar === star1[i]) {
+            alert(star2[i])
+            check=true;break;
+        }
+        else (check=false)
+    }
+    if (check===false){alert("khong tim thay")}
+</script>
+</body>
+</html>
