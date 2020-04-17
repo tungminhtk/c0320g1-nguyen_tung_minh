@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucau3</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rendDays;
+    let totalPay;
+    let check = false;
+
+    let tempName = " ";
+    name = prompt("input Name: ");
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++) {
+        if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || name.charAt(i - 1) === " ") {
+            tempName += name.charAt(i).toUpperCase();
+        }
+        tempName += name.charAt(i)
+    }
+    name = tempName;
+
+    do {
+        cmnd = prompt("input CMND: ");
+        if (!isNaN(cmnd)) {
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)) {
+            alert("CMND ko phai la so nguyen");
+            continue;
+        }
+        if (cmnd < 10000000 || cmnd > 99999999) {
+            alert("cmnd ko dung dinh dang");
+            continue;
+        }
+        check = true;
+    } while (!check);
+
+    check = false;
+
+    birthday = prompt("input Birthday: ");
+    do {
+        let countAt = 0;
+        let countDoc = 0;
+        email = prompt("input Email: ");
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                countAt++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if (countAt != 1 || countDoc < 1) {
+            alert("email ban nhap ko dung")
+        } else {
+            check = true;
+        }
+    }
+    while (!check);
+    check = false;
+
+    address = prompt("input Address: ");
+    typeService = prompt("input Type Service: ");
+    typeRoom = prompt("input Type Room: ");
+    typeCustomer = prompt("input Type Customer: ");
+    discount = prompt("input Discount: ");
+    quantityIncluded = prompt("input QuantityIncluded: ");
+    rendDays = prompt("input RendDays: ");
+    totalPay = 300 * rendDays * (1 - discount / 100);
+    alert("Name: " + name + "\n" +
+        "CMND: " + cmnd + "\n" +
+        "Birthday: " + birthday + "\n" +
+        "Email: " + email + "\n" +
+        "Address: " + address + "\n" +
+        "Type Service: " + typeService + "\n" +
+        "Type Room: " + typeRoom + "\n" +
+        "Type Customer: " + typeCustomer + "\n" +
+        "Discount: " + discount + "\n" +
+        "QuantityIncluded: " + quantityIncluded + "\n" +
+        "RendDays: " + rendDays + "\n" +
+        "TotaPay: " + totalPay)
+</script>
+
+</body>
+</html>
