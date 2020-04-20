@@ -29,6 +29,7 @@
         }
         if (i === 0 || name.charAt(i - 1) === " ") {
             tempName += name.charAt(i).toUpperCase();
+            continue;
         }
         tempName += name.charAt(i)
     }
@@ -40,11 +41,11 @@
             cmnd = Number.parseFloat(cmnd);
         }
         if (!Number.isInteger(cmnd)) {
-            alert("CMND ko phai la so nguyen");
+            alert("CMND must be a sequence of positive integers");
             continue;
         }
         if (cmnd < 10000000 || cmnd > 99999999) {
-            alert("cmnd ko dung dinh dang");
+            alert("Malformed.Please enter again.");
             continue;
         }
         check = true;
@@ -68,7 +69,7 @@
             }
         }
         if (countAt != 1 || countDoc < 1) {
-            alert("email ban nhap ko dung")
+            alert("You entered the wrong email.Please enter again")
         } else {
             check = true;
         }
