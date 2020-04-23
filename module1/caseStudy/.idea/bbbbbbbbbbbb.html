@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<br>name: <input id="name" type="text"><br/>
+<br>cmnd: <input id="cmnd" type="text"><br/>
+<br>birthday: <input id="birthday" type="text"><br/>
+<br>email: <input id="email" type="text"><br/>
+<br>address: <input id="address" type="text"><br/>
+<br>typeService: <select id="typeService">
+    <option value="Villa">Villa</option>
+    <option value="House">House</option>
+    <option value="Room">Room</option>
+</select><br/>
+<br>typeRoom: <select id="typeRoom">
+    <option value="Vip">Vip</option>
+    <option value="Business">Business</option>
+    <option value="Normal">Normal</option>
+</select><br/>
+<br>typeCustomer: <select id="typeCustomer">
+    <option value="Diamond">Diamond</option>
+    <option value="Platium">Platium</option>
+    <option value="Gold">Gold</option>
+    <option value="Silver">Silver</option>
+    <option value="Member">Member</option>
+</select><br/>
+<br>discount: <input id="discount" type="text"><br/>
+<br>quantityIncluded: <input id="quantityIncluded" type="text"><br/>
+<br>rendDays: <input id="rendDays" type="text"><br/>
+<br><input id="a" disabled>
+<button onclick="totalPay()">totalPay</button>
+<script>
+        let typeService = document.getElementById("typeService").value;
+        let typeRoom = document.getElementById("typeRoom").value;
+        let typeCustomer = document.getElementById("typeCustomer").value;
+        let discount = document.getElementById("discount").value;
+        let quantityIncluded = document.getElementById("quantityIncluded").value;
+        let rendDays = document.getElementById("rendDays").value;
+        a=typeService * rendDays - discount
+
+
+
+</script>
+
 </body>
 </html>

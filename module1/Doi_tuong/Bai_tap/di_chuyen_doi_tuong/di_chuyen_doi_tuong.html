@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>di_chuyen_doi_tuong</title>
+</head>
+<body>
+<table id="game"></table>
+<script>
+    class Xecar {
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+
+        getHeroElement() {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+        }
+
+        moveLeft() {
+            return this.left += 1
+        };
+
+        moveRight() {
+            return this.left += 1;
+        }
+
+        moveDn() {
+            return this.left += 1;
+        }
+
+        moveup() {
+            return this.left += 1;
+        }
+
+    }
+
+    let xecar = new Xecar('carR.png', 20, 20, 150);
+    function start() {
+        if (xecar.left < window.innerWidth - xecar.size) {xecar.moveRight();}
+        document.getElementById("game").innerHTML = xecar.getHeroElement();
+        setTimeout(start, 1);
+    }
+
+
+    start()
+</script>
+
+</body>
+</html>

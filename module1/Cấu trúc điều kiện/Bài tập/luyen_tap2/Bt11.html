@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt11</title>
+</head>
+<body>
+<script>
+    let money = parseFloat(prompt("Nhập tổng thu nhập (triệu): "));
+    let sum;
+    if (money < 5) {
+        sum = 0;
+    } else if (money < 10) {
+        sum = (1 / 100) * money;
+    } else if (money < 20) {
+        sum = (2 / 100) * money;
+    } else if (money < 30) {
+        sum = (5 / 100) * money;
+    } else {
+        sum = (8 / 100) * money;
+    }
+
+    alert("Thuế thu nhập: " + sum + " triệu vnd");
+</script>
+</body>
+</html>

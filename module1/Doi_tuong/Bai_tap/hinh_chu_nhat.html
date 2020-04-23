@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinh_chu_nhat</title>
+</head>
+<body>
+<canvas id="canvas1"width="200"height="100"style="border: lime 1px blue">
+</canvas>
+<script>
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+        acreage() {
+            return height * width
+        }
+
+        perimeter() {
+            return (height + width) * 2
+        }
+    }
+
+    let rectangle = new Rectangle(100, 200);
+    let height = rectangle.height;
+    let width = rectangle.width;
+    let acreage = rectangle.acreage();
+    let perimeter = rectangle.perimeter();
+    document.write("<br>"+"S: " + acreage+"</br>"+"C: " + perimeter);
+    let can=document.getElementById("canvas1");
+    let ctx=can.getContext("2d");
+    ctx.fillStyle="#4CAF50";
+    ctx.fillRect(0,0,200,100)
+</script>
+
+</body>
+</html>

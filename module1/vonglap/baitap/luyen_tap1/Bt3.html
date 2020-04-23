@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt3</title>
+</head>
+<body>
+<script>
+    let current = 0;
+    let next = 1;
+    let count = 0;
+    let total;
+    while (count < 20) {
+        total = current + next;
+        document.write(current + "</br>");
+        current = next;
+        next = total;
+        count++;
+    }
+</script>
+</body>
+</html>

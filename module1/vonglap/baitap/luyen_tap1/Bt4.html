@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt4</title>
+</head>
+<body>
+<script>
+    let current = 0;
+    let next = 1;
+    let total;
+    let result;
+    while (true) {
+        total = current + next;
+        if (current % 5 === 0 && current !== 0) {
+            result = current;
+            break;
+        }
+        current = next;
+        next = total;
+    }
+    document.write("Số đầu tiên chia hết cho 5 là : " + result);
+</script>
+</body>
+</html>

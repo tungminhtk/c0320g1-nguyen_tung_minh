@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt6</title>
+</head>
+<body>
+<script>
+    let sales = parseInt(prompt("Nhập doanh số bán hàng: "));
+    if (sales < 100) {
+        alert("Bạn không đạt doanh số")
+    } else if (sales <= 150) {
+        alert("Tiền hoa hồng: " + sales * (1 / 100));
+    } else if (sales <= 200) {
+        alert("Tiền hoa hồng: " + sales * (2 / 100));
+    } else if (sales <= 250) {
+        alert("Tiền hoa hồng: " + sales * (5 / 100));
+    } else {
+        alert("Tiền hoa hồng: " + sales * (10 / 100))
+    }
+
+</script>
+</body>
+</html>

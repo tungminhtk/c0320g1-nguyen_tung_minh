@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny circles</title>
+</head>
+<body>
+<canvas id="mycanvas" width="1368px" height="768px" style="border: 1.px solid #d3d3d3;">
+
+</canvas>
+<script>
+    class Sircle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+    }
+
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+    }
+
+    function getRandomColor() {
+        var red = getRandomHex();
+        var green = getRandomHex();
+        var blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green + ")";
+    }
+
+    let can = document.getElementById("mycanvas");
+    let ctx = can.getContext("2d");
+    let radius = Math.floor(Math.random() * 150);
+    let color = getRandomColor();
+    let sircle = new Sircle(700, 300, radius);
+
+    ctx.beginPath();
+    ctx.arc(sircle.x, sircle.y, sircle.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill()
+
+
+</script>
+
+</body>
+</html>

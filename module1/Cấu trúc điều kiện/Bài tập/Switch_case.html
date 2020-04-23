@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch_case</title>
+</head>
+<body>
+<input id="month" type="number" name="month">
+<button type="button" onclick="day()">Số ngày trong tháng</button>
+<p id="result"></p>
+<script>
+    function day_month(month) {
+        switch (month) {
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                return "30 ngày";
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                return "31 ngày";
+            case "2":
+                return "28 hoặc 29 ngày";
+            default:
+        }
+        return " Bạn nhập không đúng(Tháng 1-12)";
+    }
+
+    function day() {
+        let month = document.getElementById("month").value;
+        let result = day_month(month);
+        document.getElementById("result").innerHTML =
+            "Tháng " + month + " : " + result;
+    }
+</script>
+</body>
+</html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function so_nguyen(a, b) {
+        let result = a;
+        a = b;
+        b = result;
+        return result
+    }
+
+    let a = parseInt(prompt("Nhập a: "));
+    let b = parseInt(prompt("Nhập b: "));
+    alert(so_nguyen());
+
+</script>
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt5</title>
+</head>
+<body>
+<script>
+    let current = 0;
+    let next = 1;
+    let count = 0;
+    let total;
+    let sum = 0;
+    while (count < 20) {
+        total = current + next;
+        sum += current;
+        current = next;
+        next = total;
+        count++;
+    }
+    document.write("Tổng 20 số đầu tiên trong dãy fibonacci là: " + sum);
+</script>
+</body>
+</html>

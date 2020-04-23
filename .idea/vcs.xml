@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/codegym-module1-bootcamp-preparation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/Cấu trúc điều kiện" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/Doi_tuong/objects" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module1/nhập môn lập trình căn bản/thuc hanh/wf-hello" vcs="Git" />
   </component>
 </project>

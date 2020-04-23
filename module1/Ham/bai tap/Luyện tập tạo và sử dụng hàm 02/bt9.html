@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function f(array, char) {
+        let coult = 0;
+        for (i = 0; i < array.length; i++) {
+            if (char === array[i]) {
+                coult++;
+            }
+        }
+        if (coult === 0) {
+            return (-1)
+        } else
+            return coult;
+    }
+    alert(f([5,2,5,4,5],5))
+</script>
+
 </body>
 </html>

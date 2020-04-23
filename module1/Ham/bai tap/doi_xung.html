@@ -6,25 +6,18 @@
 </head>
 <body>
 <script>
-    function isPalindrome1(s) {
-        for(let i=0;i<s.length/2;i++) {
-            if(s[i]!==s[s.length-i-1]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    function isPalindrome(s) {
-        if(s.length<=1) {
+function isPalindrome(s) {
+        if (s.length <= 1) {
             return true;
         }
-        if(s[0]===s[s.length-1]) {
-            s=s.substring(1,s.length-1);
+        if (s[0] === s[s.length - 1]) {
+            s = s.substring(1, s.length - 1);
             return isPalindrome(s);
         } else {
             return false;
         }
-    }isPalindrome()
+    }
+    alert(isPalindrome("123321"))
 
 </script>
 

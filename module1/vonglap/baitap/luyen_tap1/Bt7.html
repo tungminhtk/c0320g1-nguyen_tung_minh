@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt7</title>
+</head>
+<body>
+<script>
+    function check(number) {
+        if( number % 15 === 0 ) return "FizzBuzz </br>";
+        if( number % 3 === 0 ) return "Fizz </br>";
+        if( number % 5 === 0 ) return "Buzz </br>";
+        return number + "</br>";
+    }
+    for (let i = 1; i <= 100; i++) {
+        document.write(check(i));
+    }
+</script>
+</body>
+</html>

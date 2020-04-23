@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt12</title>
+</head>
+<body>
+<script>
+    let deposits = parseInt(prompt("Nhập số tiền gửi: "));
+    let period = parseInt(prompt("Nhập kỳ hạn tiền gởi: "));
+    let interest;
+    if (period <= 3) {
+        interest = deposits * period * (4 / 100)
+    } else if (period <= 6) {
+        interest = deposits * period * (5 / 100)
+    } else if (period <= 9) {
+        interest = deposits * period * (6 / 100)
+    } else if (period <= 12) {
+        interest = deposits * period * (7 / 100)
+    } else {
+        interest = deposits * period * (8 / 100)
+    }
+    alert("Tổng số tiền lãi kỳ hạn "+period+" tháng là : " + interest);
+</script>
+</body>
+</html>

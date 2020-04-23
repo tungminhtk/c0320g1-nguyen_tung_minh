@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt10</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập số điện tiêu thụ(kw/h): "));
+    let area;
+    if (a > 300) {
+        area = (a - 300) * 3000 + 100 * 2500 + 100 * 2000 + 100 * 1500
+    } else if (a > 200) {
+        area = (a - 200) * 2500 + 100 * 2000 + 100
+    } else if (a > 100) {
+        area = ((a - 100) * 2000) + (100 * 1500)
+    } else {
+        area = a * 1500
+    }
+    alert("Tổng tiền điện: " + area)
+</script>
+</body>
+</html>

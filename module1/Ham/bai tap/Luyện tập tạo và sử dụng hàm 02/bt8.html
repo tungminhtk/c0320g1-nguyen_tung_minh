@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function dao_nguoc(x){
+        let first=0;
+        let last=x.length-1;
+        while (first<last){
+            let b=x[first];
+            x[first]=x[last];
+            x[last]=b;first++;last--;
+        }return x
+
+    }
+    let x=[12,5,8,3,6,10];
+    document.write(dao_nguoc(x))
+</script>
+
 </body>
 </html>

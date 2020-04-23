@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xay_dung_lop_date</title>
+</head>
+<body>
+<script>
+    class MyDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        getday() {
+            return this.day
+        }
+
+        getmonth() {
+            return this.month
+        }
+
+        getyear() {
+            return this.year
+        }
+
+        setday(day) {
+            this.day = day
+        }
+
+        setmonth(month) {
+            this.month = month
+        }
+
+        setyear(year) {
+            this.year = year
+        }
+    }
+
+    let data = new MyDate(20, 4, 2020);
+    let day = data.getday();
+    let month = data.getmonth();
+    let year = data.getyear();
+    alert(day + "/" + month + "/" + year);
+    data.setday(10);
+    data.setmonth(10);
+    data.setyear(2020);
+    day = data.getday();
+    month = data.getmonth();
+    year = data.getyear();
+    alert(day + "/" + month + "/" + year);
+
+
+</script>
+</body>
+</html>

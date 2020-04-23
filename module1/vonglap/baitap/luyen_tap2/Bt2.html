@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt2</title>
+</head>
+<body>
+<script>
+    function factorial(number) {
+        if (number === 0 || number === 1) return 1;
+
+        let result = 1;
+        for (let i = 2; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    let a = prompt("Nhập một số nguyên dương: ");
+    alert(a + "! = " + factorial(a));
+</script>
+</body>
+</html>

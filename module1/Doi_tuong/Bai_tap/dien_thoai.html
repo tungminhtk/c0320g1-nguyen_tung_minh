@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dien_thoai</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(pin, statusMobile, name) {
+            this.pin = pin;
+            this.statusMobile = statusMobile;
+            this.smsSoanThao = [];
+            this.smsThuDen = [];
+            this.smsDaGui = [];
+            this.name = name;
+        }
+        isStatus() {
+            if (this.statusMobile) {
+                return true;
+            } else {
+                alert("Điện thoại đang tắt. Vui lòng bật điện thoại")
+                return false;
+            }
+        }
+        onOrOffMoble() {
+            if (this.isStatus()) {
+                this.statusMobile = false;
+            } else {
+                this.chargMobile();
+                this.statusMobile = true;
+            }
+            this.pin--;
+        }
+        chargMobile() {
+            if (this.pin < 5) {
+                alert("pin yếu. Cần sạc điện thoại");
+                while (this.pin <= 100) {
+                    this.pin += 0.001;
+                }
+            }
+        }
+        soanSms() {
+            if (this.isStatus()) {
+                this.chargMobile();
+                let sms = prompt("Nhập nội dung tin nhắn: ")
+                this.smsSoanThao.push(sms);
+                this.pin--;
+            }
+        }
+        guiSms(mobile) {
+            if (this.isStatus) {
+                this.chargMobile();
+                if (this.smsSoanThao.length === 0) {
+                    this.soanSms();
+                    mobile.smsThuDen.push("Người gửi: " + this.name + ". " + this.smsSoanThao[0]);
+                    this.smsDaGui.push(this.smsSoanThao[0]);
+                    this.smsSoanThao.splice(0, 1);
+                } else {
+                    let temp = "";
+                    for (let i = 0; i < this.smsSoanThao.length; i++) {
+                        temp += i + ": " + this.smsSoanThao[i] + "\n";
+                    }
+                    let index = parseInt(prompt(temp + "\n" + "Yêu cầu bạn chọn tin nhắn để gửi!"));
+                    mobile.smsThuDen.push("Người gửi: " + this.name + ". " + this.smsSoanThao[index]);
+                    this.smsDaGui.push(this.smsSoanThao[index]);
+                    this.smsSoanThao.splice(index, 1);
+                }
+                this.pin--;
+            }
+        }
+        xemSms() {
+            if (this.isStatus()) {
+                let temp = [];
+                let tempSms = "";
+                this.chargMobile();
+                for (let i = 0; i < this.smsThuDen.length; i++) {
+                    let check=false;
+                    for (let j = 0; j < this.smsThuDen[i].length; j++) {
+                        if (this.smsThuDen[i].charAt(j) === ":") {
+                            let tempNguoiGui = "";
+                            for (let k = j + 1; k < this.smsThuDen[i].length; k++) {
+                                if (this.smsThuDen[i].charAt(k) === ".") {
+                                    temp.push(tempNguoiGui);
+                                    check=true;
+                                    break;
+                                } else {
+                                    tempNguoiGui += this.smsThuDen[i].charAt(k);
+                                }
+                            }
+                            if(check) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                for (let i = 0; i < temp.length; i++) {
+                    tempSms += i + ": " + temp[i] + "\n";
+                }
+                let index = parseInt(prompt(tempSms+"\nChọn tin nhắn mà bạn muốn xem: "));
+                alert(this.smsThuDen[index]);
+                this.pin--;
+            }
+        }
+    }
+    let nokia=new Mobile(100,true,"nokia");
+    let iphone=new Mobile(10,true,"iphone");
+    nokia.guiSms(iphone);
+    iphone.xemSms();
+</script>
+
+</body>
+</html>

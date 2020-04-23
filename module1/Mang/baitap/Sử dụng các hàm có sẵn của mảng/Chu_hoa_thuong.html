@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chu_hoa_thuong</title>
+</head>
+<body>
+<script>
+    let x = ["a", "b", "C", "D"];
+    let hoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let thuong = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+
+    for (let i = 0; i < x.length; i++) {
+        if (hoa.indexOf(x[i]) !== -1) {
+            result.push(x[i].toLowerCase());
+        } else if (thuong.indexOf(x[i]) !== -1) {
+            result.push(x[i].toUpperCase());
+        } else {
+            result.push(x[i]);
+        }
+    }
+    document.writeln(result.join(' '));
+</script>
+
+</body>
+</html>

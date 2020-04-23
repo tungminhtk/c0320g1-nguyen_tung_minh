@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt5</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập điểm kiểm tra: "));
+    let b = parseInt(prompt("Nhập điểm thi giữa học kỳ: "));
+    let c = parseInt(prompt("Nhập điểm thi cuối học kỳ: "));
+    let area = (a + b + (c * 2)) / 4;
+    if (area < 5) {
+        alert("Xếp loại: Yếu")
+    } else if (area < 6.5) {
+        alert("Xếp loại: Trung Bình")
+    } else if (area < 8) {
+        alert("Xếp loại: Khá")
+    } else {
+        alert("Xếp loại: Giỏi")
+    }
+</script>
+</body>
+</html>

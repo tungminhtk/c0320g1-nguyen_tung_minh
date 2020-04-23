@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt2</title>
+</head>
+<body>
+<script>
+    let number
+    do {
+        number = prompt("Nhập nhiệt độ");
+        if (number < 20) {
+            alert("Tăng nhiệt độ");
+        }
+        if (number > 100) {
+            alert("Giảm nhiệt độ");
+        }
+    } while (number < 20 || number > 100);
+    alert("Nhiệt độ cân bằng : " + number);
+</script>
+</body>
+</html>

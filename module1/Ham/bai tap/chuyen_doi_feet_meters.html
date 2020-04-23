@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen_doi_meter-feet</title>
+</head>
+<body>
+<p>
+    <label>Meter: </label>
+    <input id="inputmeter" type="number" placeholder="Nhập metet"
+           oninput="meterConverter(this.value)"
+           onchange="meterConverter(this.value)">
+</p>
+<p>
+    Feet: <span id="outputfeet"></span>
+</p>
+<p>
+    <label>Feet: </label>
+    <input id="inputfeet" type="number" placeholder="Nhập feet"
+           oninput="feetConverter(this.value)"
+           onchange="feetConverter(this.value)">
+</p>
+<p>
+    Meter: <span id="outputmeter"></span>
+</p>
+
+<script>
+    function meterConverter(meter) {
+        meter = parseFloat(meter);
+        document.getElementById("outputfeet").innerHTML = 3.279 * meter;
+    }
+    function feetConverter(feet) {
+        feet = parseFloat(feet);
+        document.getElementById("outputmeter").innerHTML = 0.305 * feet;
+    }
+</script>
+</body>
+</html>

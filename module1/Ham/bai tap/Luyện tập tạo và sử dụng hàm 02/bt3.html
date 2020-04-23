@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function factorialize(number) {
+        if (number === 0) { return 1; }
+        return number * factorialize(number-1);
+    }
+    let input=parseInt(prompt("nhap 1 so: "));
+    let number=input;
+    alert(factorialize(input))
+</script>
+
 </body>
 </html>

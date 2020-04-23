@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <input type="text" id="key">
+    <input type="button" value="Search" onclick="search()"</table>
+<script>
+    let animals = ["dog", "cat", "chicken", "duck", "pig", "cows", "horse", "bird", "fish"]
+    let convat = ["chó", "mèo", "gà", "vịt", "heo", "bò", "ngựa", "chim", "cá"]
+    function search() {
+        let key = document.getElementById("key").value;
+             for (i = 0; i < animals.length; i++){
+                 if (key === animals[i]) {
+                     alert(convat[i])
+                 }else if (key===convat[i]){
+                     alert(animals[i])
+                 }
+            }
+        }
+</script>
+</body>
+</html>

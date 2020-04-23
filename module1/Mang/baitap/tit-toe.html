@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tit-toe</title>
+</head>
+<body>
+<h2>Caro</h2>
+<br />
+<table id="table" border="1"></table>
+<script>
+    let width = 8;
+    let height = 8;
+    let play = [];
+    let count = 0;
+
+    function check(a, b, c) {
+        return a === b && b === c && c === a;
+    }
+
+    function init() {
+        for (let i = 0; i < width; i++) {
+            play.push(new Array(height));
+        }
+        for (let i = 0; i < width; i++) {
+            for (let j = 0; j < height; j++) {
+                play[i][j] = " ";
+            }
+        }
+    }
+
+    function checkRow() {
+        for (let i = 0; i < play.length; i++) {
+            for (let j = 0; j < play.length - 2; j++) {
+                if (
+                    check(play[i][j], play[i][j + 1], play[i][j + 2])
+                ) {
+                    switch (play[i][j]) {
+                        case "X":
+                            return 1;
+                        case "O":
+                            return 0;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    function checkCol() {
+        for (let i = 0; i < play.length - 2; i++) {
+            for (let j = 0; j < play.length; j++) {
+                if (
+                    check(play[i][j], play[i + 1][j], play[i + 2][j])
+                ) {
+                    switch (play[i][j]) {
+                        case "X":
+                            return 1;
+                        case "O":
+                            return 0;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    function checkCrossLeft() {
+        for (let i = 0; i < play.length - 2; i++) {
+            for (let j = 0; j < play.length - 2; j++) {
+                if (
+                    check(
+                        play[i][j],
+                        play[i + 1][j + 1],
+                        play[i + 2][j + 2]
+                    )
+                ) {
+                    console.log(i, j);
+                    switch (play[i][j]) {
+                        case "X":
+                            return 1;
+                        case "O":
+                            return 0;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    function checkCrossRight() {
+        for (let i = 0; i < play.length - 2; i++) {
+            for (let j = 2; j < play.length; j++) {
+                if (
+                    check(
+                        play[i][j],
+                        play[i + 1][j - 1],
+                        play[i + 2][j - 2]
+                    )
+                ) {
+                    switch (play[i][j]) {
+                        case "X":
+                            return 1;
+                        case "O":
+                            return 0;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    function show() {
+        let table = "";
+        for (let i = 0; i < width; i++) {
+            let temp = "<tr>";
+            for (let j = 0; j < height; j++) {
+                temp += `<td><button onclick="changeValue(${i},${j})"
+                style="width:40px; height:40px; text-align:center">${play[i][j]}</button></td>`;
+            }
+            temp += "<tr>" ;
+            table += temp;
+        }
+        document.getElementById("table").innerHTML = table;
+    }
+
+    function checkWin() {
+        let rs = [checkCol(), checkRow(), checkCrossRight(), checkCrossLeft()];
+        if (rs.indexOf(1) !== -1) {
+            alert("X win");
+        } else if (rs.indexOf(0) !== -1) {
+            alert("O win");
+        } else if (count === width * height) {
+            alert("Draw");
+        }
+    }
+
+    function changeValue(x, y) {
+        if (play[x][y] === " ") {
+            if (count % 2) {
+                play[x][y] = "O";
+            } else {
+                play[x][y] = "X";
+            }
+            count++;
+            show();
+            checkWin();
+        }
+    }
+
+    init();
+    show();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt7</title>
+</head>
+<body>
+<script>
+    let minutes = parseFloat(prompt("Nhập tổng sô phút cuộc gọi: "));
+    let subscription = 25000;
+    let charges;
+    if (minutes > 200) {
+        charges = ((minutes - 200) * 200) + (150 * 400) + (50 * 600);
+    } else if (minutes > 50) {
+        charges = ((minutes - 50) * 400) + (50 * 600);
+    } else {
+        charges = (minutes * 600);
+    }
+
+    let total = charges + subscription;
+    alert("Tổng cước điện thoại: " + total);
+</script>
+</body>
+</html>

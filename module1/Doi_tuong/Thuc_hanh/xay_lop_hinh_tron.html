@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xay_lop_hinh_tron</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+
+        getradius() {
+            return this.radius
+        }
+
+        getArea() {
+            return Math.PI * radius * radius
+        }
+
+        setradius(radius) {
+            this.radius = radius
+        }
+    }
+
+    let
+        circle = new Circle(2);
+    let
+        radius = circle.getradius();
+    let
+        area = circle.getArea();
+
+    alert("radius: " + radius + "; area: " + area);
+    circle.setradius(4);
+    radius=circle.getradius();
+    area = circle.getArea();
+    alert("radius: " + radius + "; area: " + area);
+    circle.setradius(20);
+    radius=circle.getradius();
+    area = circle.getArea();
+    alert("radius: " + radius + "; area: " + area);
+
+</script>
+
+</body>
+</html>

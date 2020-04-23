@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt8</title>
+</head>
+<body>
+<button onclick="run();">Chơi</button>
+<script>
+    function run() {
+        alert("Nhập đoạn muốn đoán [a, b]");
+        let a = parseInt(prompt("Nhập a : "));
+        let b = parseInt(prompt("Nhập b : "));
+        if (a > b) {
+            a = b + (b = a);
+        }
+
+        let Random = Math.floor(Math.random() * (b - a + 1)) + a;
+        let number;
+        do {
+            number = parseInt(prompt("Nhập số dự đoán"));
+            if (number > Random) {
+                alert("Số bé hơn");
+            } else if (number < Random) {
+                alert("Số lớn hơn");
+            } else {
+                alert("Chúc mừng bạn dự đoán đúng");
+                break;
+            }
+        } while (number !== Random);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi_so_PMI</title>
+</head>
+<body>
+<script>
+    let cao = parseFloat(prompt("nhap chieu cao: "));
+    let nang = parseInt(prompt("nhap can nang: "));
+    let a = nang / (cao * 2);
+
+    function bmi() {
+        if (a < 18) {
+            document.write("ban qua om ");
+        } else if (a <= 25) {
+            document.write(" ban binh thuong");
+        } else if (a < 30) {
+            document.write("ban thua can");
+        } else
+            document.write("ban beo phi");
+    }
+    bmi()
+
+</script>
+
+</body>
+</html>

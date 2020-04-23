@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lop_mo_ta_Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC
+        }
+
+        cDenF() {
+            return (this.doC * 1.8) + 32
+        }
+
+        cDenKevin() {
+            return (this.doC + 273.15)
+        }
+    }
+    let temperature = new Temperature(25);
+    let cDenF = temperature.cDenF();
+    let cDenKevin = temperature.cDenKevin();
+    alert("do F: " + cDenF + "; do Kenvin: " + cDenKevin)
+</script>
+</body>
+</html>

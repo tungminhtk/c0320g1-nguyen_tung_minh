@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function nho_nhat(a, b, c) {
+        let min=0
+        if (a < b) {
+            if (a < c) {
+                min = a
+            } else {
+                min = c
+            }}
+        else
+            if(b < c)
+            {
+                min = b
+            }
+        else
+            {
+                min = c
+            }return min
+    }
+    let a = parseInt(prompt("Nhập a: "));
+    let b = parseInt(prompt("Nhập b: "));
+    let c = parseInt(prompt("Nhập c: "));
+    result=nho_nhat(a,b,c)
+    alert("Số nhỏ nhất trong 3 số vừa nhập là: "+result)
+
+</script>
+
 </body>
 </html>
