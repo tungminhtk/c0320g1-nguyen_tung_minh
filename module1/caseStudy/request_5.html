@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>request_5</title>
+</head>
+<body>
+<script>
+    let arrListCustomer = [];
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Add new customer." + "\n2. Display Information Customer."
+            + "\n3. Edit Information Customer." + "\n4. Delete Customer" + "\n5. Exit"));
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                break;
+            }
+            case 3: {
+                break;
+            }
+            case 4: {
+                break;
+            }
+            case 5: {
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+
+        }
+    }
+
+    function addNewCustomer() {
+        let CusInfor = []
+        let name = prompt("input Name: ");
+        let cmnd = prompt("input CMND: ");
+        let birthday = prompt("input Birthday: ");
+        let email = prompt("input Email: ");
+        let address = prompt("input Address: ");
+        let typeService = prompt("input Type Service: ");
+        let typeRoom = prompt("input Type Room: ");
+        let typeCustomer = prompt("input Type Customer: ");
+        let discount = prompt("input Discount: ");
+        let quantityIncluded = prompt("input QuantityIncluded: ");
+        let rendDays = prompt("input RendDays: ");
+        CusInfor.push(name);
+        CusInfor.push(cmnd);
+        CusInfor.push(birthday);
+        CusInfor.push(email);
+        CusInfor.push(address);
+        CusInfor.push(typeService);
+        CusInfor.push(typeRoom);
+        CusInfor.push(typeCustomer);
+        CusInfor.push(discount);
+        CusInfor.push(quantityIncluded);
+        CusInfor.push(rendDays);
+        arrListCustomer.push(CusInfor);
+        alert("You have added to the catalog.");
+    }
+
+    displayMainMenu();
+</script>
+</body>
+</html>

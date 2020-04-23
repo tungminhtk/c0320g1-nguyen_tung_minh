@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yeucau3</title>
+    <title>request_3</title>
 </head>
 <body>
 <script>
@@ -52,8 +52,29 @@
     } while (!check);
 
     check = false;
+    do {
+        birthday = prompt("input Birthday: ");
+        if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
+            let day = birthday.substring(0, 2);
+            let month = birthday.substring(3, 5);
+            let year = birthday.substring(6, 10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1935) {
+                        check = true;
+                    }
+                }
+            }
+        }
+        if (!check) {
+            alert("The date of birth was not in the correct format")
+        }
+    } while (!check);
 
-    birthday = prompt("input Birthday: ");
+    check = false;
     do {
         let countAt = 0;
         let countDoc = 0;
@@ -75,15 +96,41 @@
         }
     }
     while (!check);
-    check = false;
 
+    check = false;
     address = prompt("input Address: ");
     typeService = prompt("input Type Service: ");
     typeRoom = prompt("input Type Room: ");
     typeCustomer = prompt("input Type Customer: ");
     discount = prompt("input Discount: ");
-    quantityIncluded = prompt("input QuantityIncluded: ");
-    rendDays = prompt("input RendDays: ");
+
+    do {
+        quantityIncluded = prompt("input QuantityIncluded: ");
+        if (!isNaN(quantityIncluded)) {
+            quantityIncluded = Number.parseFloat(quantityIncluded);
+            if (Number.isInteger(quantityIncluded) && quantityIncluded > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert("quantityIncluded must be a positive integer")
+        }
+    } while (!check);
+    check = false;
+
+    do {
+        rendDays = prompt("input RendDays: ");
+        if (!isNaN(rendDays)) {
+            rendDays = Number.parseFloat(rendDays);
+            if (Number.isInteger(rendDays) && rendDays > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert("RendDays must be a positive integer")
+        }
+    } while (!check);
+    check = false;
     totalPay = 300 * rendDays * (1 - discount / 100);
     alert("Name: " + name + "\n" +
         "CMND: " + cmnd + "\n" +
