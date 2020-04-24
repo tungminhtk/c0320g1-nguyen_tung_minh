@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game_puzzle</title>
+</head>
+<body>
+<img src="1a.png" id="xe1a" onclick="thaydoi(1)" width="262 px" height="600 px">
+<img src="2b.png" id="xe1b" onclick="thaydoi(2)" width="262 px" height="600 px">
+<img src="3c.png" id="xe1c" onclick="thaydoi(3)" width="262 px" height="600 px">
+<img src="1d.png" id="xe1d" onclick="thaydoi(4)" width="262 px" height="600 px">
+<img src="2e.png" id="xe1e" onclick="thaydoi(5)" width="262 px" height="600 px">
+
+<script>
+    let a = document.getElementById("xe1a");
+    let b = document.getElementById("xe1b");
+    let c = document.getElementById("xe1c");
+    let d = document.getElementById("xe1d");
+    let e = document.getElementById("xe1e");
+
+    function thaydoi(number) {
+        switch (number) {
+            case 1:
+                if (a.getAttribute("src") === "1a.png") {
+                    a.src = "3a.png";
+                } else if (a.getAttribute("src") === "3a.png") {
+                    a.src = "2a.png";
+                } else if (a.getAttribute("src") === "2a.png") {
+                    a.src = "1a.png";
+                }
+                break;
+            case 2:
+                if (b.getAttribute("src") === "1b.png") {
+                    b.src = "2b.png";
+                } else if (b.getAttribute("src") === "2b.png") {
+                    b.src = "3b.png";
+                } else if (b.getAttribute("src") === "3b.png") {
+                    b.src = "1b.png";
+                }
+                break;
+            case 3:
+                if (c.getAttribute("src") === "1c.png") {
+                    c.src = "3c.png";
+                } else if (c.getAttribute("src") === "3c.png") {
+                    c.src = "2c.png";
+                } else if (c.getAttribute("src") === "2c.png") {
+                    c.src = "1c.png";
+                }
+                break;
+            case 4:
+                if (d.getAttribute("src") === "1d.png") {
+                    d.src = "2d.png";
+                } else if (d.getAttribute("src") === "2d.png") {
+                    d.src = "3d.png";
+                } else if (d.getAttribute("src") === "3d.png") {
+                    d.src = "1d.png";
+                }
+                break;
+            case 5:
+                if (e.getAttribute("src") === "1e.png") {
+                    e.src = "3e.png";
+                } else if (e.getAttribute("src") === "3e.png") {
+                    e.src = "2e.png";
+                } else if (e.getAttribute("src") === "2e.png") {
+                    e.src = "1e.png";
+                }
+                break;
+        }
+        if (a.getAttribute("src") === "1a.png" && b.getAttribute("src") === "1b.png" &&
+            c.getAttribute("src") === "1c.png" && d.getAttribute("src") === "1d.png" &&
+            e.getAttribute("src") === "1e.png") {
+            alert("You Win")
+        }
+        if (a.getAttribute("src") === "2a.png" && b.getAttribute("src") === "2b.png" &&
+            c.getAttribute("src") === "2c.png" && d.getAttribute("src") === "2d.png" &&
+            e.getAttribute("src") === "2e.png") {
+            alert("You Win")
+        }
+        if (a.getAttribute("src") === "3a.png" && b.getAttribute("src") === "3b.png" &&
+            c.getAttribute("src") === "3c.png" && d.getAttribute("src") === "3d.png" &&
+            e.getAttribute("src") === "3e.png") {
+            alert("You Win")
+        }
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bt3</title>
+</head>
+<body>
+<script>
+    let arr = ["meo", "chim", "51", "4", "heo", 7, "bo", 3];
+    let result = arr.reduce(function (sum, area) {
+        return (sum + (typeof area === "string" && area >= "1" && area <= "9"))
+    },0);
+    alert("So ky tu trong mang: " + result)
+</script>
+</body>
+</html>

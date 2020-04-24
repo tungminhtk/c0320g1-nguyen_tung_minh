@@ -4,88 +4,50 @@
     <meta charset="UTF-8">
     <title>di_chuyen_doi_tuong</title>
 </head>
-<body onload="init()">
-<p id="game"></p>
+<body>
+<table id="game"></table>
 <script>
-    class Car {
-        constructor(speed, srcImage, top, left) {
-            this.speed = speed;
-            this.srcImage = srcImage;
+    class Xecar {
+        constructor(image, top, left, size) {
+            this.image = image;
             this.top = top;
             this.left = left;
+            this.size = size;
         }
-        displayCar() {
-            return '<img width="' + 75 + '"' +
-                ' height="' + 100 + '"' +
-                ' src="' + this.srcImage + '"' +
+
+        getXecarElement() {
+            return '<img width="' + 100 + '"' +
+                ' height="' + 75 + '"' +
+                ' src="' + this.image + '"' +
                 ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
         }
-        moveRight(){
-            this.left += this.speed;
+
+        moveRight() {
+            return this.left += 1;
         }
-        moveDown(){
-            this.top += this.speed;
-        }
-        moveTop() {
-            this.top -= this.speed;
-        }
-        moveLeft() {
-            this.left -= this.speed;
+
+        moveDown() {
+            return this.top += 1;
         }
     }
-    let car = new Car(20, "car.png", 500, 500);
-    let direction ="";
-    function move() {
-        switch(direction) {
-            case "top": {
-                car.moveTop();
-                break;
-            }
-            case "left": {
-                car.moveLeft();
-                break;
-            }
-            case "down": {
-                car.moveDown();
-                break;
-            }
-            case "right": {
-                car.moveRight();
-                break;
-            }
+
+    let xecar = new Xecar('carR.png', 20, 20, 150);
+
+    function start() {
+        if (xecar.left < window.innerWidth - xecar.size) {
+            xecar.moveRight()
+        } else if (xecar.top < window.innerHeight - xecar.size) {
+            (xecar).moveDown();
         }
-        document.getElementById('game').innerHTML = car.displayCar();
-        setTimeout(move, 200)
+        document.getElementById("game").innerHTML = xecar.getXecarElement();
+
+        setTimeout(start, 1);
     }
-    function init() {
-        window.addEventListener("keydown",start)
-        move();
-    }
-    function start(evt) {
-        switch(evt.keyCode) {
-            case 37: {
-                direction="left";
-                car.srcImage="carL.png";
-                break;
-            }
-            case 38: {
-                direction="top";
-                car.srcImage="car.png";
-                break;
-            }
-            case 39: {
-                direction="right";
-                car.srcImage="carR.png";
-                break;
-            }
-            case 40: {
-                direction="down";
-                car.srcImage="carD.png";
-                break;
-            }
-        }
-    }
+
+    start()
+
 </script>
+
 
 </body>
 </html>

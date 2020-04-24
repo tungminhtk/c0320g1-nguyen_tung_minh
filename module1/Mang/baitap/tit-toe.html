@@ -5,12 +5,11 @@
     <title>tit-toe</title>
 </head>
 <body>
-<h2>Caro</h2>
-<br />
+<h2>Caro</h2><br/>
 <table id="table" border="1"></table>
 <script>
-    let width = 8;
-    let height = 8;
+    let width = 4;
+    let height = 4;
     let play = [];
     let count = 0;
 
@@ -32,9 +31,7 @@
     function checkRow() {
         for (let i = 0; i < play.length; i++) {
             for (let j = 0; j < play.length - 2; j++) {
-                if (
-                    check(play[i][j], play[i][j + 1], play[i][j + 2])
-                ) {
+                if (check(play[i][j], play[i][j + 1], play[i][j + 2])) {
                     switch (play[i][j]) {
                         case "X":
                             return 1;
@@ -50,9 +47,7 @@
     function checkCol() {
         for (let i = 0; i < play.length - 2; i++) {
             for (let j = 0; j < play.length; j++) {
-                if (
-                    check(play[i][j], play[i + 1][j], play[i + 2][j])
-                ) {
+                if (check(play[i][j], play[i + 1][j], play[i + 2][j])) {
                     switch (play[i][j]) {
                         case "X":
                             return 1;
@@ -68,14 +63,7 @@
     function checkCrossLeft() {
         for (let i = 0; i < play.length - 2; i++) {
             for (let j = 0; j < play.length - 2; j++) {
-                if (
-                    check(
-                        play[i][j],
-                        play[i + 1][j + 1],
-                        play[i + 2][j + 2]
-                    )
-                ) {
-                    console.log(i, j);
+                if (check(play[i][j], play[i + 1][j + 1], play[i + 2][j + 2])) {
                     switch (play[i][j]) {
                         case "X":
                             return 1;
@@ -91,13 +79,7 @@
     function checkCrossRight() {
         for (let i = 0; i < play.length - 2; i++) {
             for (let j = 2; j < play.length; j++) {
-                if (
-                    check(
-                        play[i][j],
-                        play[i + 1][j - 1],
-                        play[i + 2][j - 2]
-                    )
-                ) {
+                if (check(play[i][j], play[i + 1][j - 1], play[i + 2][j - 2])) {
                     switch (play[i][j]) {
                         case "X":
                             return 1;
@@ -118,7 +100,7 @@
                 temp += `<td><button onclick="changeValue(${i},${j})"
                 style="width:40px; height:40px; text-align:center">${play[i][j]}</button></td>`;
             }
-            temp += "<tr>" ;
+            temp += "<tr>";
             table += temp;
         }
         document.getElementById("table").innerHTML = table;
