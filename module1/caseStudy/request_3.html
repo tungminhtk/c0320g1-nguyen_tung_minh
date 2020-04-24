@@ -21,7 +21,7 @@
     let check = false;
 
     let tempName = " ";
-    name = prompt("input Name: ");
+    name = prompt("Your Name: ");
     name = name.trim().toLowerCase();
     for (let i = 0; i < name.length; i++) {
         if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
@@ -36,12 +36,12 @@
     name = tempName;
 
     do {
-        cmnd = prompt("input CMND: ");
+        cmnd = prompt("ID number: ");
         if (!isNaN(cmnd)) {
             cmnd = Number.parseFloat(cmnd);
         }
         if (!Number.isInteger(cmnd)) {
-            alert("CMND must be a sequence of positive integers");
+            alert("ID number must be a sequence of positive integers");
             continue;
         }
         if (cmnd < 10000000 || cmnd > 99999999) {
@@ -53,7 +53,7 @@
 
     check = false;
     do {
-        birthday = prompt("input Birthday: ");
+        birthday = prompt("Day of birthday: ");
         if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
             let day = birthday.substring(0, 2);
             let month = birthday.substring(3, 5);
@@ -78,7 +78,7 @@
     do {
         let countAt = 0;
         let countDoc = 0;
-        email = prompt("input Email: ");
+        email = prompt("Email: ");
         for (let i = 0; i < email.length; i++) {
             if (email.charAt(i) === "@") {
                 countAt++;
@@ -98,14 +98,14 @@
     while (!check);
 
     check = false;
-    address = prompt("input Address: ");
-    typeService = prompt("input Type Service: ");
-    typeRoom = prompt("input Type Room: ");
-    typeCustomer = prompt("input Type Customer: ");
-    discount = prompt("input Discount: ");
+    address = prompt("Address: ");
+    typeService = prompt("Type Service: ");
+    typeRoom = prompt("Type Room: ");
+    typeCustomer = prompt("Type Customer: ");
+    discount = prompt("Discount: ");
 
     do {
-        quantityIncluded = prompt("input QuantityIncluded: ");
+        quantityIncluded = prompt("Quantity Included: ");
         if (!isNaN(quantityIncluded)) {
             quantityIncluded = Number.parseFloat(quantityIncluded);
             if (Number.isInteger(quantityIncluded) && quantityIncluded > 0) {
@@ -113,13 +113,13 @@
             }
         }
         if (!check) {
-            alert("quantityIncluded must be a positive integer")
+            alert("Quantity Included must be a positive integer")
         }
     } while (!check);
     check = false;
 
     do {
-        rendDays = prompt("input RendDays: ");
+        rendDays = prompt("RendDays: ");
         if (!isNaN(rendDays)) {
             rendDays = Number.parseFloat(rendDays);
             if (Number.isInteger(rendDays) && rendDays > 0) {
@@ -133,7 +133,7 @@
     check = false;
     totalPay = 300 * rendDays * (1 - discount / 100);
     alert("Name: " + name + "\n" +
-        "CMND: " + cmnd + "\n" +
+        "ID: " + cmnd + "\n" +
         "Birthday: " + birthday + "\n" +
         "Email: " + email + "\n" +
         "Address: " + address + "\n" +
@@ -141,9 +141,9 @@
         "Type Room: " + typeRoom + "\n" +
         "Type Customer: " + typeCustomer + "\n" +
         "Discount: " + discount + "\n" +
-        "QuantityIncluded: " + quantityIncluded + "\n" +
+        "Quantity Included: " + quantityIncluded + "\n" +
         "RendDays: " + rendDays + "\n" +
-        "TotaPay: " + totalPay)
+        "Total Pay: " + totalPay)
 </script>
 
 </body>

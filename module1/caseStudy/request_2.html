@@ -17,14 +17,13 @@
     let discount = 10;
     let quantityIncluded = 10;
     let rendDays = 7;
-    let totalPay;
-    let choose = parseInt(prompt("1. Hiển thị thông tin khách hàng." + "\n" +
-        "2. Chỉnh sửa thông tin khách hàng." + "\n"
-        + "3. Hiển thị giá sau khi được giảm giá"));
+    let choose = parseInt(prompt("1. Display customer information." + "\n" +
+        "2. Edit customer information." + "\n"
+        + "3. Show prices after discount"));
     switch (choose) {
         case 1: {
             alert("Name: " + name + "\n" +
-                "CMND: " + cmnd + "\n" +
+                "ID: " + cmnd + "\n" +
                 "Birthday: " + birthday + "\n" +
                 "Email: " + email + "\n" +
                 "Address: " + address + "\n" +
@@ -32,13 +31,13 @@
                 "Type Room: " + typeRoom + "\n" +
                 "Type Customer: " + typeCustomer + "\n" +
                 "Discount: " + discount + "\n" +
-                "QuantityIncluded: " + quantityIncluded + "\n" +
+                "Quantity Included: " + quantityIncluded + "\n" +
                 "RendDays: " + rendDays);
             break;
         }
         case 2: {
             let chooseEdit = parseInt(prompt("1.Name: " + name + "\n" +
-                "2.CMND: " + cmnd + "\n" +
+                "2.ID: " + cmnd + "\n" +
                 "3.Birthday: " + birthday + "\n" +
                 "4.Email: " + email + "\n" +
                 "5.Address: " + address + "\n" +
@@ -46,56 +45,56 @@
                 "7.Type Room: " + typeRoom + "\n" +
                 "8.Type Customer: " + typeCustomer + "\n" +
                 "9.Discount: " + discount + "\n" +
-                "10.QuantityIncluded: " + quantityIncluded + "\n" +
+                "10.Quantity Included: " + quantityIncluded + "\n" +
                 "11.RendDays: " + rendDays));
             switch (chooseEdit) {
                 case 1: {
-                    name = prompt("Enter Name: ");
+                    name = prompt("Your Name: ");
                     break;
                 }
                 case 2: {
-                    cmnd = prompt("Enter CMND: ");
+                    cmnd = prompt("ID number: ");
                     break;
                 }
                 case 3: {
-                    birthday = prompt("Enter Birthday: ");
+                    birthday = prompt("Day of birthday: ");
                     break;
                 }
                 case 4: {
-                    address = prompt("Enter Address: ");
+                    address = prompt("Email: ");
                     break;
                 }
                 case 5: {
-                    address = prompt("Enter Address: ");
+                    address = prompt("Address: ");
                     break;
                 }
                 case 6: {
-                    typeService = prompt("Enter Type Service: ");
+                    typeService = prompt("Type Service: ");
                     break;
                 }
                 case 7: {
-                    typeRoom = prompt("Enter Type Room: ");
+                    typeRoom = prompt("Type Room: ");
                     break;
                 }
                 case 8: {
-                    typeCustomer = prompt("Enter Type Customer: ");
+                    typeCustomer = prompt("Type Customer: ");
                     break;
                 }
                 case 9: {
-                    discount = prompt("Enter Discount: ");
+                    discount = prompt("Discount: ");
                     break;
                 }
                 case 10: {
-                    quantityIncluded = prompt("Enter QuantityIncluded: ");
+                    quantityIncluded = prompt("Quantity Included: ");
                     break;
                 }
                 case 11: {
-                    rendDays = prompt("Enter rendDay: ");
+                    rendDays = prompt("RendDay: ");
                     break;
                 }
             }
             alert("Name: " + name + "\n" +
-                "CMND: " + cmnd + "\n" +
+                "ID: " + cmnd + "\n" +
                 "Birthday: " + birthday + "\n" +
                 "Email: " + email + "\n" +
                 "Address: " + address + "\n" +
@@ -103,7 +102,7 @@
                 "Type Room: " + typeRoom + "\n" +
                 "Type Customer: " + typeCustomer + "\n" +
                 "Discount: " + discount + "\n" +
-                "QuantityIncluded: " + quantityIncluded + "\n" +
+                "Quantity Included: " + quantityIncluded + "\n" +
                 "RendDays: " + rendDays);
             break;
         }
@@ -142,7 +141,7 @@
             } else if (typeCustomer === "Member") {
                 temp += 0;
             }
-            alert("TotalPay: " + (money * rendDays - temp));
+            alert("Total Pay: " + (money * rendDays - temp));
             break;
         }
     }
