@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <script src="../request_6/Task_1/Customer2.js"></script>
+</head>
+<body>
+<script>
+    let regexpEmail = /(^[a-z0-9A-Z])([a-zA-Z0-9]+@[a-zA-Z]+)(\.[a-zA-Z]+)$/;
+    let regexpBirthday = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
+    let regexpCmnd = /^[\d]{8}$/;
+    let regexpDiscount = /^\d+$/;
+    let regexpName = /[a-zA-Z]/;
+    let listCustomer = [];
+
+    function displayMainManu() {
+        let choose = parseInt(prompt("1. Add new customer." + "\n2. Display Information Customer."
+            + "\n3. Display Total Pays Customer" + "\n4. Edit Information Customer." + "\n5. Delete Customer" + "\n6. Exit"));
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayCustomer();
+                break;
+            }
+            case 3: {
+                displayTotalPays();
+                break;
+            }
+            case 4: {
+                editCustomer();
+                break;
+            }
+            case 5: {
+                deleteCustomer();
+                break;
+            }
+            case 6: {
+                Exit();
+                break;
+            }
+            default: {
+                alert("Failed")
+            }
+        }
+    }
+
+    function addNewCustomer() {
+        let checkValid = false;
+        let cus = new Customer2();
+        let name;
+        let cmnd;
+        let birthday;
+        let email;
+        let address;
+        let typeService;
+        let typeRoom;
+        let typeCustomer
+        let discount;
+        let quantityIncluded;
+        let rendDays;
+        do {
+            name = prompt("Your Name: ");
+            if (regexpName.test(name)) {
+                checkValid = true;
+            } else {
+                alert("you entered incorrectly. Please enter again.")
+            }
+        }
+        while (!checkValid);
+
+        checkValid = false;
+        do {
+            cmnd = prompt("ID number: ");
+            if (regexpCmnd.test(cmnd)) {
+                checkValid = true;
+            } else {
+                alert("Malformed. Please enter again.")
+            }
+        }
+        while (!checkValid);
+
+        checkValid = false;
+        do {
+            birthday = prompt("Day of birthday: ");
+            if (regexpBirthday.test(birthday)) {
+                checkValid = true;
+            } else {
+                alert("The date of birth was not in the correct format.")
+            }
+        }
+        while (!checkValid);
+        checkValid = false;
+        do {
+            email = prompt("Email: ");
+            if (regexpEmail.test(email)) {
+                checkValid = true;
+            } else {
+                alert("You entered the wrong email. Please enter again.")
+            }
+        } while (!checkValid)
+        address = prompt("Address: ");
+        checkValid = false;
+        do {
+            typeService = prompt("Type Service: ");
+            if (regexpName.test(typeService)) {
+                checkValid = true;
+            } else {
+                alert("you entered incorrectly. Please enter again.")
+            }
+        }
+        while (!checkValid);
+        checkValid = false;
+        do {
+            typeRoom = prompt("Type Room: ");
+            if (regexpName.test(typeRoom)) {
+                checkValid = true;
+            } else {
+                alert("you entered incorrectly. Please enter again.")
+            }
+        }
+        while (!checkValid);
+        checkValid = false;
+        do {
+            typeCustomer = prompt("Type Customer: ");
+            if (regexpName.test(typeCustomer)) {
+                checkValid = true;
+            } else {
+                alert("you entered incorrectly. Please enter again.")
+            }
+        }
+        while (!checkValid);
+
+        checkValid = false;
+        do {
+            discount = prompt("Discount: ");
+            if (regexpDiscount.test(discount)) {
+                checkValid = true;
+            } else {
+                alert("Discount is not right. It must be a number.")
+            }
+        } while (!checkValid);
+        checkValid = false;
+        do {
+            quantityIncluded = prompt("Quantity Included: ");
+            if (regexpDiscount.test(quantityIncluded)) {
+                checkValid = true;
+            } else {
+                alert("Quantity Included is not right. It must be a number.")
+            }
+        } while (!checkValid);
+        checkValid = false;
+        do {
+            rendDays = prompt("RendDays: ");
+            if (regexpDiscount.test(rendDays)) {
+                checkValid = true;
+            } else {
+                alert("RendDays is not right. It must be a number.")
+            }
+        }
+        while (!checkValid)
+
+        cus.setName(name);
+        cus.setCMND(cmnd);
+        cus.setBirthday(birthday);
+        cus.setEmail(email);
+        cus.setAddress(address);
+        cus.setTypeService(typeService);
+        cus.setTypeRoom(typeRoom);
+        cus.setTypeCustomer(typeCustomer);
+        cus.setDiscount(discount);
+        cus.setQuantityIncluded(quantityIncluded);
+        cus.setRendDays(rendDays);
+        listCustomer.push(cus);
+        alert("You have added to the list.");
+        displayMainManu();
+    }
+
+    displayMainManu()
+
+    function displayCustomer() {
+        let temp = "";
+        for (i = 0; i < listCustomer.length; i++) {
+            temp += i + ".Name: " + listCustomer[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Name: " + listCustomer[chooseDisplay].getName() + "\n" +
+            "ID: " + listCustomer[chooseDisplay].getCMND() + "\n" +
+            "Birthday: " + listCustomer[chooseDisplay].getBirthday() + "\n" +
+            "Email: " + listCustomer[chooseDisplay].getEmail() + "\n" +
+            "Address: " + listCustomer[chooseDisplay].getAddress() + "\n" +
+            "Type Service: " + listCustomer[chooseDisplay].getTypeService() + "\n" +
+            "Type Room: " + listCustomer[chooseDisplay].getTypeRoom() + "\n" +
+            "Type Customer: " + listCustomer[chooseDisplay].getTypeCustomer() + "\n" +
+            "Discount: " + listCustomer[chooseDisplay].getDiscount() + "\n" +
+            "Quantity Included: " + listCustomer[chooseDisplay].getQuantityIncluded() + "\n" +
+            "RendDays: " + listCustomer[chooseDisplay].getRendDays());
+        displayMainManu();
+    }
+
+    function displayTotalPays() {
+        let temp = "";
+        for (i = 0; i < listCustomer.length; i++) {
+            temp += i + ".Name: " + listCustomer[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Your total payment is: " + listCustomer[chooseDisplay].totalPays())
+    }
+
+    function editCustomer() {
+        let temp = "";
+        for (i = 0; i < listCustomer.length; i++) {
+            temp += i + ".Name: " + listCustomer[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        let chooseEdit = parseInt(prompt("1.Name: " + listCustomer[chooseDisplay].getName() + "\n" +
+            "2.ID: " + listCustomer[chooseDisplay].getCMND() + "\n" +
+            "3.Birthday: " + listCustomer[chooseDisplay].getBirthday() + "\n" +
+            "4.Email: " + listCustomer[chooseDisplay].getEmail() + "\n" +
+            "5.Address: " + listCustomer[chooseDisplay].getAddress() + "\n" +
+            "6.Type Service: " + listCustomer[chooseDisplay].getTypeService() + "\n" +
+            "7.Type Room: " + listCustomer[chooseDisplay].getTypeRoom() + "\n" +
+            "8.Type Customer: " + listCustomer[chooseDisplay].getTypeCustomer() + "\n" +
+            "9.Discount: " + listCustomer[chooseDisplay].getDiscount() + "\n" +
+            "10.Quantity Included: " + listCustomer[chooseDisplay].getQuantityIncluded() + "\n" +
+            "11.RendDays: " + listCustomer[chooseDisplay].getRendDays()));
+        switch (chooseEdit) {
+            case 1: {
+                listCustomer[chooseDisplay].setName(prompt("Your Name: "));
+                break;
+            }
+            case 2: {
+                listCustomer[chooseDisplay].setCMND(prompt("ID number: "));
+                break;
+            }
+            case 3: {
+                listCustomer[chooseDisplay].setBirthday(prompt("Day of birthday: "));
+                break;
+            }
+            case 4: {
+                listCustomer[chooseDisplay].setEmail(prompt("Email: "));
+                break;
+            }
+            case 5: {
+                listCustomer[chooseDisplay].setAddress(prompt("Address: "));
+                break;
+            }
+            case 6: {
+                listCustomer[chooseDisplay].setTypeService(prompt("Type Service: "));
+                break;
+            }
+            case 7: {
+                listCustomer[chooseDisplay].setTypeRoom(prompt("Type Room: "));
+                break;
+            }
+            case 8: {
+                listCustomer[chooseDisplay].setTypeCustomer(prompt("Type Customer: "));
+                break;
+            }
+            case 9: {
+                listCustomer[chooseDisplay].setDiscount(prompt("Discount: "));
+                break;
+            }
+            case 10: {
+                listCustomer[chooseDisplay].setQuantityIncluded(prompt("Quantity Included: "));
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+        }
+        displayMainManu()
+    }
+
+    function deleteCustomer() {
+        let temp = "";
+        for (i = 0; i < listCustomer.length; i++) {
+            temp += i + ".Name: " + listCustomer[i].getName() + "\n";
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        let check = confirm("You definitely want to delete");
+        if (check === true) {
+            listCustomer.splice(chooseDelete, true);
+            alert("You have removed from the list")
+        }
+        displayMainManu()
+    }
+</script>
+</body>
+</html>

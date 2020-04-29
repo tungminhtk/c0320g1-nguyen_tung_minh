@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <script src="Employee.js"></script>
+</head>
+<body>
+<script>
+    let listEmployee = [];
+
+    function displayMainManu() {
+        let choose = parseInt(prompt("1. Add new Employee." + "\n2. Display Information Employee."
+            + "\n3. Salary of Employee" + "\n4. Exit"));
+        switch (choose) {
+            case 1: {
+                addNewEmployee();
+                break;
+            }
+            case 2: {
+                displayEmployee();
+                break;
+            }
+            case 3: {
+                displaySalary();
+                break;
+            }
+            case 4: {
+                exit();
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+        }
+    }
+
+    function addNewEmployee() {
+        let employee = new Employee();
+        employee.setName(prompt("Your Name: "));
+        employee.setBirthday(prompt("Day of birthday: "));
+        employee.setPhone(prompt("Phone: "));
+        employee.setEmail(prompt("Email: "));
+        employee.setCMND(prompt("ID number: "));
+        employee.setLevel(prompt("Level: "));
+        employee.setLocation(prompt("Location: "));
+        listEmployee.push(employee);
+        alert("You have added to the list.");
+        displayMainManu();
+    }
+
+    displayMainManu();
+
+    function displayEmployee() {
+        let temp = "";
+        for (let i = 0; i < listEmployee.length; i++) {
+            temp += (i + 1) + ".Name: " + listEmployee[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Name: " + listEmployee[chooseDisplay - 1].getName() + "\n" +
+            "Birthday: " + listEmployee[chooseDisplay - 1].getBirthday() + "\n" +
+            "Phone: " + listEmployee[chooseDisplay - 1].getPhone() + "\n" +
+            "Email: " + listEmployee[chooseDisplay - 1].getEmail() + "\n" +
+            "ID: " + listEmployee[chooseDisplay - 1].getCMND() + "\n" +
+            "Level: " + listEmployee[chooseDisplay - 1].getLevel() + "\n" +
+            "Location: " + listEmployee[chooseDisplay - 1].getLocation());
+        displayMainManu();
+    }
+
+    function displaySalary() {
+        let temp = "";
+        for (let i = 0; i < listEmployee.length; i++) {
+            temp += (i + 1) + ".Name: " + listEmployee[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Your salary is: " + listEmployee[chooseDisplay - 1].getSalary());
+    }
+
+    function exit() {
+    }
+
+</script>
+</body>
+</html>
